@@ -1,9 +1,19 @@
-import React, { Component } from 'react';
-import { AppExtensionSDK } from 'contentful-ui-extensions-sdk';
-import { Heading, Form, Workbench, Paragraph } from '@contentful/forma-36-react-components';
-import { css } from 'emotion';
+import React, { Component, ChangeEvent } from "react";
+import { AppExtensionSDK } from "contentful-ui-extensions-sdk";
+import {
+  TextField,
+  Heading,
+  Form,
+  Workbench,
+  Paragraph,
+} from "@contentful/forma-36-react-components";
+import { css } from "emotion";
 
-export interface AppInstallationParameters {}
+export interface AppInstallationParameters {
+  cpaToken: string;
+}
+
+type ParameterKeys = keyof AppInstallationParameters;
 
 interface ConfigProps {
   sdk: AppExtensionSDK;
@@ -14,9 +24,12 @@ interface ConfigState {
 }
 
 export default class Config extends Component<ConfigProps, ConfigState> {
+  sdk: AppExtensionSDK;
+
   constructor(props: ConfigProps) {
     super(props);
-    this.state = { parameters: {} };
+    this.state = { parameters: { cpaToken: "" } };
+    this.sdk = props.sdk;
 
     // `onConfigure` allows to configure a callback to be
     // invoked when a user attempts to install the app or update
@@ -37,22 +50,45 @@ export default class Config extends Component<ConfigProps, ConfigState> {
   }
 
   onConfigure = async () => {
-    // This method will be called when a user clicks on "Install"
-    // or "Save" in the configuration screen.
-    // for more details see https://www.contentful.com/developers/docs/extensibility/ui-extensions/sdk-reference/#register-an-app-configuration-hook
+    const currentAppState = await this.sdk.app.getCurrentState();
 
     return {
-      // Parameters to be persisted as the app configuration.
-      parameters: this.state.parameters
+      parameters: this.state.parameters,
+      targetState: {
+        EditorInterface: {
+          ...currentAppState.EditorInterface,
+        },
+      },
     };
+  };
+
+  onInputChange = (event: ChangeEvent) => {
+    const target = event.target as HTMLInputElement;
+    const { name, value } = target;
+
+    this.setState({
+      parameters: {
+        [name as ParameterKeys]: value,
+      },
+    });
   };
 
   render() {
     return (
-      <Workbench className={css({ margin: '80px' })}>
+      <Workbench className={css({ margin: "80px" })}>
         <Form>
-          <Heading>App Config</Heading>
-          <Paragraph>Welcome to your contentful app. This is your config page.</Paragraph>
+          <Heading>GraphQL Playground Config</Heading>
+          <Paragraph>
+            Please define your Content Preview API (CPA) token here
+          </Paragraph>
+          <TextField
+            name="cpaToken"
+            id="cpaToken"
+            labelText="CPA token"
+            required
+            value={this.state.parameters.cpaToken}
+            onChange={this.onInputChange}
+          />
         </Form>
       </Workbench>
     );

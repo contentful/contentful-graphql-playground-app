@@ -1,3 +1,5 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Source+Code+Pro:400,700";
+
 html,
 body,
 div {
@@ -7,4 +9,8 @@ div {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+}
+
+.graphiql-wrapper button {
+  border: none;
 }
