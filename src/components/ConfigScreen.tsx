@@ -152,22 +152,27 @@ export default class Config extends Component<ConfigProps, ConfigState> {
     );
   }
 
+  // save and install
   onConfigure = async () => {
-    const currentAppState = await this.sdk.app.getCurrentState();
+    try {
+      const currentAppState = await this.sdk.app.getCurrentState();
 
-    if (!this.state.parameters.cpaToken) {
-      this.sdk.notifier.error("Please define the Content Preview API token.");
-      return false;
-    }
+      if (!this.state.parameters.cpaToken) {
+        this.sdk.notifier.error("Please define the Content Preview API token.");
+        return false;
+      }
 
-    return {
-      parameters: this.state.parameters,
-      targetState: {
-        EditorInterface: {
-          ...currentAppState.EditorInterface,
+      return {
+        parameters: this.state.parameters,
+        targetState: {
+          EditorInterface: {
+            ...(currentAppState ? currentAppState.EditorInterface : {}),
+          },
         },
-      },
-    };
+      };
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   onInputChange = (event: ChangeEvent): void => {
@@ -210,6 +215,7 @@ export default class Config extends Component<ConfigProps, ConfigState> {
 
         {TABS.map(({ id, render }) => (
           <div
+            key={id}
             style={{
               display: id === currentTab ? "block" : "none",
               padding: "1em",
