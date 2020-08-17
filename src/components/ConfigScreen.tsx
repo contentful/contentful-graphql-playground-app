@@ -3,7 +3,6 @@ import { AppExtensionSDK } from "contentful-ui-extensions-sdk";
 import {
   Card,
   TextField,
-  Heading,
   Form,
   TextLink,
   Paragraph,
@@ -89,7 +88,6 @@ export default class Config extends Component<ConfigProps, ConfigState> {
           style={{ height: "5em", margin: "0 0 2em", display: "block" }}
         />
         <Form>
-          <Heading>GraphQL Playground Config</Heading>
           <Paragraph>
             <TextLink
               href={`https://app.contentful.com/spaces/${this.sdk.ids.space}/api/keys`}
