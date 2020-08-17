@@ -1,13 +1,15 @@
 import React, { Component, ChangeEvent } from "react";
 import { AppExtensionSDK } from "contentful-ui-extensions-sdk";
 import {
+  Card,
   TextField,
   Heading,
   Form,
-  Workbench,
+  TextLink,
   Paragraph,
+  Note,
 } from "@contentful/forma-36-react-components";
-import { css } from "emotion";
+import logo from "../assets/logo.png";
 
 export interface AppInstallationParameters {
   cpaToken: string;
@@ -52,6 +54,11 @@ export default class Config extends Component<ConfigProps, ConfigState> {
   onConfigure = async () => {
     const currentAppState = await this.sdk.app.getCurrentState();
 
+    if (!this.state.parameters.cpaToken) {
+      this.sdk.notifier.error("Please define the Content Preview API token.");
+      return false;
+    }
+
     return {
       parameters: this.state.parameters,
       targetState: {
@@ -75,12 +82,28 @@ export default class Config extends Component<ConfigProps, ConfigState> {
 
   render() {
     return (
-      <Workbench className={css({ margin: "80px" })}>
+      <Card style={{ maxWidth: "30em", margin: "3em auto" }}>
+        <img
+          src={logo}
+          alt="GraphlQL Playground Logo"
+          style={{ height: "5em", margin: "0 0 2em", display: "block" }}
+        />
         <Form>
           <Heading>GraphQL Playground Config</Heading>
           <Paragraph>
-            Please define your Content Preview API (CPA) token here
+            <TextLink
+              href={`https://app.contentful.com/spaces/${this.sdk.ids.space}/api/keys`}
+              target="_blank"
+              rel="noopener"
+            >
+              Create a Content Preview API token
+            </TextLink>{" "}
+            and define save it here:
           </Paragraph>
+          <Note>
+            The CPA (Content Preview API) token allows you to also access
+            preview data when using GraphQL playground.
+          </Note>
           <TextField
             name="cpaToken"
             id="cpaToken"
@@ -90,7 +113,7 @@ export default class Config extends Component<ConfigProps, ConfigState> {
             onChange={this.onInputChange}
           />
         </Form>
-      </Workbench>
+      </Card>
     );
   }
 }
