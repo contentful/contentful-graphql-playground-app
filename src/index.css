@@ -14,3 +14,7 @@ div {
 .graphiql-wrapper button {
   border: none;
 }
+
+img {
+  max-width: 100%;
+}
