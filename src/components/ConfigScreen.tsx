@@ -96,9 +96,9 @@ export default class Config extends Component<ConfigProps, ConfigState> {
               target="_blank"
               rel="noopener"
             >
-              Create a Content Preview API token
+              Create a new pair of API keys
             </TextLink>{" "}
-            and define save it here:
+            and save the Content Preview API token below:
           </Paragraph>
           <Note>
             The CPA (Content Preview API) token allows you to also access
