@@ -1,12 +1,16 @@
 # Contentful GraphQL Playground App
 
-> This project was bootstrapped with [Create Contentful App](https://github.com/contentful/create-contentful-app).
+> A [Contentful App](https://www.contentful.com/developers/docs/extensibility/app-framework/) to query Contentful's GraphQL API using GraphQL Playground right from with in web interface.
+
+![./screenshot.png](Screenshot of GraphQL playground inside of the Contentful UI)
 
 ## Setup
 
 ...
 
 ## Development
+
+> This project was bootstrapped with [Create Contentful App](https://github.com/contentful/create-contentful-app).
 
 In the project directory, you can run:
 
