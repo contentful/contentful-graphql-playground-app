@@ -1,13 +1,19 @@
-This project was bootstrapped with [Create Contentful App](https://github.com/contentful/create-contentful-app).
+# Contentful GraphQL Playground App
 
-## Available Scripts
+> This project was bootstrapped with [Create Contentful App](https://github.com/contentful/create-contentful-app).
+
+## Setup
+
+...
+
+## Development
 
 In the project directory, you can run:
 
 #### `npm start`
 
 Creates or update your app definition in contentful, and runs the app in development mode.
-Open your app  to view it in the browser.
+Open your app to view it in the browser.
 
 The page will reload if you make edits.
 You will also see any lint errors in the console.

@@ -10,8 +10,9 @@ import {
   Tabs,
   Tab,
 } from "@contentful/forma-36-react-components";
-import logo from "../assets/logo.png";
-import locationsScreenshot from "../assets/locations.png";
+import logoUrl from "../assets/logo.png";
+import locationsScreenshotUrl from "../assets/locations.png";
+import sidebarScreenshotUrl from "../assets/sidebar.png";
 
 export interface AppInstallationParameters {
   cpaToken: string;
@@ -74,17 +75,16 @@ const TABS = [
     ),
   },
   {
-    id: "additional-info",
-    label: "Additional setup info",
+    id: "app-definition",
+    label: "App Definition",
     render: () => (
       <>
         <Paragraph>
-          Currently, you can use GraphQL playground right in the entry sidebar
-          or as a full page app. Make sure your app definition defines all
-          locations.
+          You can use GraphQL playground right in the entry sidebar or as a full
+          page app. Make sure your app definition defines these locations.
         </Paragraph>
         <img
-          src={locationsScreenshot}
+          src={locationsScreenshotUrl}
           alt="Screenshot of the app definition that allows to define locations"
         />
         <Note>
@@ -92,6 +92,35 @@ const TABS = [
           run{" "}
           <TextLink
             href="https://www.contentful.com/developers/docs/extensibility/app-framework/locations/"
+            target="blank"
+            rel="noopener"
+          >
+            in the documentation
+          </TextLink>
+          .
+        </Note>
+      </>
+    ),
+  },
+  {
+    id: "sidebar-config",
+    label: "Sidebar",
+    render: () => (
+      <>
+        <Paragraph>
+          To enable GraphQL playground in the content entry sidebar head over to
+          the content model section and define to use a the custom sidebar. If
+          you're app definition is configured properly GraphQL playground will
+          be available.
+        </Paragraph>
+        <img
+          src={sidebarScreenshotUrl}
+          alt="Screenshot of the sidebar configuration of a content type"
+        />
+        <Note style={{ marginTop: "1em" }}>
+          You can learn more about the sidebar location{" "}
+          <TextLink
+            href="https://www.contentful.com/developers/docs/extensibility/app-framework/locations/#entry-sidebar"
             target="blank"
             rel="noopener"
           >
@@ -116,7 +145,7 @@ const TABS = [
           >
             open an issue on GitHub
           </TextLink>
-          .
+          . We're open for contributions, too. 🙈
         </Paragraph>
       </>
     ),
@@ -130,6 +159,8 @@ export default class Config extends Component<ConfigProps, ConfigState> {
     super(props);
     this.state = { currentTab: "configuration", parameters: { cpaToken: "" } };
     this.sdk = props.sdk;
+
+    console.log(this.sdk);
 
     // `onConfigure` allows to configure a callback to be
     // invoked when a user attempts to install the app or update
@@ -171,7 +202,7 @@ export default class Config extends Component<ConfigProps, ConfigState> {
         },
       };
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -196,7 +227,7 @@ export default class Config extends Component<ConfigProps, ConfigState> {
     return (
       <Card style={{ maxWidth: "38em", margin: "3em auto" }}>
         <img
-          src={logo}
+          src={logoUrl}
           alt="GraphlQL Playground Logo"
           style={{ height: "5em", display: "block" }}
         />
