@@ -12,7 +12,7 @@
 
 To install this app head over to your organization settings and create a new app.
 
-![Installation dialog](./installation.png)
+![Installation dialog](./docs/installation.png)
 
 Define the application name you prefer and the following App URL: `https://contentful-graphql-playground-app.netlify.app`.
 
@@ -24,7 +24,7 @@ This app supports the following locations in the Contentful UI:
 
 _Make sure to enable the App configuration screen to configure the application._
 
-![App configuration dialog](./app-config.png)
+![App configuration dialog](./docs/app-config.png)
 
 Install the app into your preferred space. Create and define a CPA (Content Preview API) token and save the configuration. Follow the instructions inside of the app configuration screen to enable the app for the entry sidebar.
 
