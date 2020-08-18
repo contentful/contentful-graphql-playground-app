@@ -1,8 +1,10 @@
+![Contentful App](https://img.shields.io/badge/Contentful-App-blue)
+
 # Contentful GraphQL Playground App
 
 > A [Contentful App](https://www.contentful.com/developers/docs/extensibility/app-framework/) to query Contentful's GraphQL API using GraphQL Playground right from with in web interface.
 
-![./screenshot.png](Screenshot of GraphQL playground inside of the Contentful UI)
+![Screenshot of GraphQL playground inside of the Contentful UI](./screenshot.png)
 
 ## Setup
 
