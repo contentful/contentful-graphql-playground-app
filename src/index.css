@@ -18,3 +18,10 @@ div {
 img {
   max-width: 100%;
 }
+
+/* dirty hack to desiable the animation in the dialog */
+.dialogCloseBtn + div > div {
+  opacity: 1;
+  animation: none !important;
+  transform: translateY(0);
+}

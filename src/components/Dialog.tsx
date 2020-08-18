@@ -1,6 +1,7 @@
 import React from "react";
 import { DialogExtensionSDK } from "contentful-ui-extensions-sdk";
 import GqlPlayground from "./GqlPlayground";
+import { Button } from "@contentful/forma-36-react-components";
 
 interface DialogProps {
   sdk: DialogExtensionSDK;
@@ -28,6 +29,17 @@ const Dialog = (props: DialogProps) => {
 
   return (
     <>
+      <Button
+        buttonType="primary"
+        className="dialogCloseBtn"
+        icon="Close"
+        onClick={() => sdk.close()}
+        size="small"
+        type="button"
+        style={{ position: "absolute", top: "1em", right: "4em", zIndex: 1 }}
+      >
+        Close{" "}
+      </Button>
       <GqlPlayground {...{ entry, cpaToken, spaceId }} />;
     </>
   );
