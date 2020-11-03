@@ -160,8 +160,6 @@ export default class Config extends Component<ConfigProps, ConfigState> {
     this.state = { currentTab: "configuration", parameters: { cpaToken: "" } };
     this.sdk = props.sdk;
 
-    console.log(this.sdk);
-
     // `onConfigure` allows to configure a callback to be
     // invoked when a user attempts to install the app or update
     // its configuration.
