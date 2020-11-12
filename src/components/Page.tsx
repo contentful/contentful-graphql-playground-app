@@ -13,9 +13,10 @@ const Page = (props: PageProps) => {
   // @ts-ignore
   const cpaToken = parameters?.installation?.cpaToken;
   const spaceId = sdk.ids.space;
+  const spaceEnvironment = sdk.ids.environment;
 
   return cpaToken ? (
-    <GqlPlayground {...{ cpaToken, spaceId }} />
+    <GqlPlayground {...{ cpaToken, spaceId, spaceEnvironment }} />
   ) : (
     <Card style={{ margin: "1em" }}>
       <Note noteType="warning">

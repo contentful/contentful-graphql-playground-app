@@ -8,9 +8,15 @@
 
 ## Setup
 
+### Installation from the Contentful Marketplace
+
+Open [the Contentful GraphQL Playground app Marketplace entry](https://www.contentful.com/marketplace/app/graphql-playground/) and hit "Install now".
+
+### Manual setup (only needed for development)
+
 [The Contentful App Framework](https://www.contentful.com/developers/docs/extensibility/app-framework/) allows developers to extend the Contentful UI with custom functionality. You can install the app and use its hosted version without editing any code.
 
-To install this app head over to your organization settings and create a new app.
+To install and develop this app head over to your organization settings and create a new app.
 
 ![Installation dialog](./docs/installation.png)
 

@@ -75,34 +75,6 @@ const TABS = [
     ),
   },
   {
-    id: "app-definition",
-    label: "App Definition",
-    render: () => (
-      <>
-        <Paragraph>
-          You can use GraphQL playground right in the entry sidebar or as a full
-          page app. Make sure your app definition defines these locations.
-        </Paragraph>
-        <img
-          src={locationsScreenshotUrl}
-          alt="Screenshot of the app definition that allows to define locations"
-        />
-        <Note>
-          You can learn more about the different locations a Contentful App can
-          run{" "}
-          <TextLink
-            href="https://www.contentful.com/developers/docs/extensibility/app-framework/locations/"
-            target="blank"
-            rel="noopener"
-          >
-            in the documentation
-          </TextLink>
-          .
-        </Note>
-      </>
-    ),
-  },
-  {
     id: "sidebar-config",
     label: "Sidebar",
     render: () => (

@@ -25,3 +25,9 @@ img {
   animation: none !important;
   transform: translateY(0);
 }
+
+body .playground {
+  /* dirty hack to overwrite this declaration that make the container overflow
+  and show scrollbars */
+  margin-right: 0 !important;
+}
