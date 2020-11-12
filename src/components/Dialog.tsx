@@ -25,8 +25,6 @@ const Dialog = (props: DialogProps) => {
     }
   });
 
-  console.log(entry);
-
   return (
     <>
       <Button
