@@ -16,7 +16,7 @@
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
     "@types/react-redux": "^7.1.11",
-    "contentful-ui-extensions-sdk": "^3.25.0",
+    "contentful-ui-extensions-sdk": "^3.37.0",
     "graphql-playground-react": "^1.7.27",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

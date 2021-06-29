@@ -17,6 +17,7 @@ const Dialog = (props: DialogProps) => {
   const cpaToken = parameters?.installation?.cpaToken;
   const spaceId = sdk.ids.space;
   const spaceEnvironment = sdk.ids.environment;
+  const spaceEnvironmentAlias = sdk.ids.environmentAlias;
 
   sdk.window.updateHeight(800);
   document.addEventListener("keydown", (event) => {
@@ -38,7 +39,7 @@ const Dialog = (props: DialogProps) => {
       >
         Close{" "}
       </Button>
-      <GqlPlayground {...{ entry, cpaToken, spaceId, spaceEnvironment }} />;
+      <GqlPlayground {...{ entry, cpaToken, spaceId, spaceEnvironment, spaceEnvironmentAlias }} />;
     </>
   );
 };

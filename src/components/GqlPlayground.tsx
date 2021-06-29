@@ -20,6 +20,7 @@ interface GqlPlaygroundProps {
   cpaToken: string;
   spaceId: string;
   spaceEnvironment: string;
+  spaceEnvironmentAlias: string | undefined;
   entry?: Entry;
 }
 
@@ -31,10 +32,10 @@ function formatQuery(query: string) {
 }
 
 function GqlPlayground(props: GqlPlaygroundProps) {
-  const { cpaToken, entry, spaceId, spaceEnvironment } = props;
+  const { cpaToken, entry, spaceId, spaceEnvironment, spaceEnvironmentAlias } = props;
 
   const tabConfig = {
-    endpoint: `https://graphql.contentful.com/content/v1/spaces/${spaceId}/environments/${spaceEnvironment}`,
+    endpoint: `https://graphql.contentful.com/content/v1/spaces/${spaceId}/environments/${spaceEnvironmentAlias || spaceEnvironment}`,
     headers: {
       Authorization: `Bearer ${cpaToken}`,
     },
