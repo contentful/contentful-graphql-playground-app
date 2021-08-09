@@ -11,7 +11,6 @@ import {
   Tab,
 } from "@contentful/forma-36-react-components";
 import logoUrl from "../assets/logo.png";
-import locationsScreenshotUrl from "../assets/locations.png";
 import sidebarScreenshotUrl from "../assets/sidebar.png";
 
 export interface AppInstallationParameters {
