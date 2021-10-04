@@ -2,11 +2,11 @@
 
 # Contentful GraphQL Playground App
 
-[![Install to Contentful](https://www.ctfstatic.com/button/install-small.svg)](https://app.contentful.com/deeplink?link=apps&id=66frtrAqmWSowDJzQNDiD)
-
 > A [Contentful App](https://www.contentful.com/developers/docs/extensibility/app-framework/) to query Contentful's GraphQL API using GraphQL Playground right from with in web interface.
 
 ![Screenshot of GraphQL playground inside of the Contentful UI](./screenshot.png)
+
+[![Install to Contentful](https://www.ctfstatic.com/button/install-small.svg)](https://app.contentful.com/deeplink?link=apps&id=66frtrAqmWSowDJzQNDiD)
 
 ## Setup
 
