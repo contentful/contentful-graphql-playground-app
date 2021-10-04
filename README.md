@@ -8,12 +8,6 @@
 
 ## Setup
 
-### Installation via the new "App sharing" feature
-
-Hit the button. 👇
-
-[![Install to Contentful](https://www.ctfstatic.com/button/install-small.svg)](https://app.contentful.com/deeplink?link=apps&id=66frtrAqmWSowDJzQNDiD)
-
 ### Installation from the Contentful Marketplace
 
 Open [the Contentful GraphQL Playground app Marketplace entry](https://www.contentful.com/marketplace/app/graphql-playground/) and hit "Install now".
