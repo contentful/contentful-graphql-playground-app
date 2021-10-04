@@ -6,9 +6,13 @@
 
 ![Screenshot of GraphQL playground inside of the Contentful UI](./screenshot.png)
 
-[![Install to Contentful](https://www.ctfstatic.com/button/install-small.svg)](https://app.contentful.com/deeplink?link=apps&id=66frtrAqmWSowDJzQNDiD)
-
 ## Setup
+
+### Installation via the new "App sharing" feature
+
+Hit the button. 👇
+
+[![Install to Contentful](https://www.ctfstatic.com/button/install-small.svg)](https://app.contentful.com/deeplink?link=apps&id=66frtrAqmWSowDJzQNDiD)
 
 ### Installation from the Contentful Marketplace
 
