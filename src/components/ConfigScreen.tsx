@@ -81,7 +81,7 @@ const TABS = [
         <Paragraph>
           To enable GraphQL playground in the content entry sidebar head over to
           the content model section and define to use a the custom sidebar. If
-          you're app definition is configured properly GraphQL playground will
+          your app definition is configured properly GraphQL playground will
           be available.
         </Paragraph>
         <img
