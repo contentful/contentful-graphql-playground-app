@@ -4,7 +4,6 @@ import {
   Playground,
   store,
   GraphQLEditor,
-  getResponses,
   getQuery,
 } from 'graphql-playground-react';
 import stripIndent from 'strip-indent';
@@ -105,8 +104,6 @@ function GqlPlayground(props: GqlPlaygroundProps) {
   useEffect(() => {
     const unsubscribe = store.subscribe(() => {
       const query: string = getQuery(store.getState());
-      const response = getResponses(store.getState());
-      console.log(response);
       const result = query.toLowerCase().includes('collection');
       if (hasCollection !== result) {
         setHasCollection(result);
