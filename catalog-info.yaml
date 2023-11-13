@@ -22,9 +22,9 @@ metadata:
     - tier-unknown
 spec:
   #cli, component, contentful.com/template, documentation, function, library, service, template, website
-  type: unknown 
+  type: component
   #deprecated, experimental, production, unknown
-  lifecycle: unknown  
+  lifecycle: production
   system: unknown #optional
   # your team name as it appears in github when tagging them for reviews
-  owner: group:team-unknown 
+  owner: group:team-developer-experience
