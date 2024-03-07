@@ -7,10 +7,10 @@ apiVersion: backstage.io/v1alpha1
 # Component, API, Template, Group, User, Resource, System, Domain, Location
 kind: Component #this is the likely default, feel free to change to one of the above
 metadata:
-  name: {{ .Repo}} 
+  name:  contentful-graphql-playground-app
   description: unknown
   annotations:
-    github.com/project-slug: {{ .Org}}/{{ .Repo}} 
+    github.com/project-slug: contentful/contentful-graphql-playground-app
     contentful.com/service-tier: "4" #1, 2, 3, 4
     # optional
     # https://contentful.roadie.so/catalog/default/component/ci-alerts/docs/
